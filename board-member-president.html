@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>President - IMMERSE at UCLA</title>
+    <link rel="stylesheet" href="Style.css">
+    <style>
+        .member-detail-header {
+            background: linear-gradient(135deg, #25936f 0%, #1d6d52 100%);
+            color: var(--white);
+            padding: 100px 0 60px;
+            margin-top: 60px;
+        }
+
+        .member-detail-header a {
+            color: #73f8ff;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .member-detail-header a:hover {
+            text-decoration: underline;
+        }
+
+        .member-detail-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: start;
+            margin: 3rem 0;
+        }
+
+        .member-photo-section {
+            background-color: #fff1c7;
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .member-photo-placeholder {
+            width: 100%;
+            aspect-ratio: 1;
+            background: linear-gradient(135deg, #25936f 0%, #1d6d52 100%);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: #73f8ff;
+            margin-bottom: 1.5rem;
+        }
+
+        .member-photo-placeholder.is-image {
+            background-size: cover;
+            background-position: center;
+        }
+
+        .photo-upload-info {
+            color: #666;
+            font-size: 0.9rem;
+            margin-top: 1rem;
+        }
+
+        .member-info-section h1 {
+            color: #25936f;
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .member-info-section .position-title {
+            color: #73f8ff;
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+        }
+
+        .about-section {
+            background-color: var(--white);
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            border-left: 5px solid #ff8639;
+        }
+
+        .about-section h3 {
+            color: #25936f;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .about-section p {
+            color: #666;
+            line-height: 1.8;
+            white-space: pre-wrap;
+        }
+
+        .member-socials {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .social-btn {
+            flex: 1;
+            padding: 0.9rem;
+            border: 2px solid #25936f;
+            background-color: var(--white);
+            color: #25936f;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .social-btn:hover {
+            background-color: #25936f;
+            color: var(--white);
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 2rem;
+            color: #25936f;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .back-link:hover {
+            color: #73f8ff;
+        }
+
+        .edit-note {
+            background-color: #fff1c7;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+            color: #666;
+            font-size: 0.9rem;
+            border-left: 4px solid #ff8639;
+        }
+
+        @media (max-width: 768px) {
+            .member-detail-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .member-info-section h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">IMMERSE</div>
+            <ul class="nav-menu">
+                <li><a href="Index.html#home" class="nav-link">Home</a></li>
+                <li><a href="Index.html#about" class="nav-link">About</a></li>
+                <li><a href="mission.html" class="nav-link">Our Mission</a></li>
+                <li><a href="team.html" class="nav-link">Team</a></li>
+                <li><a href="projects.html" class="nav-link">Projects</a></li>
+                <li><a href="get-involved.html" class="nav-link">Get Involved</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Member Header -->
+    <section class="member-detail-header">
+        <div class="container">
+            <a href="team.html">← Back to Team</a>
+            <h1 style="margin-top: 1.5rem;">Board Member Profile</h1>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section style="padding: 60px 0;">
+        <div class="container">
+            <a href="team.html" class="back-link">← Back to Team</a>
+
+            <div class="member-detail-container">
+                <!-- Photo Section -->
+                <div class="member-photo-section">
+                    <div class="member-photo-placeholder">📷</div>
+                    <p class="photo-upload-info">Replace this placeholder with a professional photo</p>
+                </div>
+
+                <!-- Info Section -->
+                <div class="member-info-section">
+                    <h1>[Member Name]</h1>
+                    <div class="position-title">President</div>
+                    
+                    <div class="edit-note">
+                        <strong>To customize this page:</strong> Replace placeholder text with member's actual name, bio, and add their photo. Update email and social media links below.
+                    </div>
+
+                    <div class="about-section">
+                        <h3>About Me</h3>
+                        <p>Add a biography here. Share your background, academic interests, why you joined IMMERSE, your role as President, and your vision for the organization. Tell the community about your passion for medical education, research, and empathy in healthcare.
+
+This is a great place to highlight:
+• Your academic major and year
+• Relevant experience and achievements
+• Why you're passionate about IMMERSE's mission
+• Your goals as President
+• Hobbies and interests outside of IMMERSE</p>
+                    </div>
+
+                    <div class="member-socials">
+                        <a href="mailto:immerse@ucla.edu" class="social-btn">✉ Email</a>
+                        <a href="#" class="social-btn">in LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>IMMERSE</h3>
+                    <p>UCLA Student-Led Medical Education & Research Club</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p>Email: immerse@ucla.edu</p>
+                    <p>Location: UCLA Campus, Los Angeles, CA</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <div class="social-links">
+                        <a href="#">Instagram</a> | 
+                        <a href="#">Facebook</a> | 
+                        <a href="#">LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 IMMERSE at UCLA. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="Script.js"></script>
+</body>
+</html>

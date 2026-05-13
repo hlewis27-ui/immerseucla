@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Life with Parkinson's - IMMERSE at UCLA</title>
+    <link rel="stylesheet" href="Style.css">
+    <style>
+        .project-detail-header {
+            background: linear-gradient(135deg, #25936f 0%, #1d6d52 100%);
+            color: var(--white);
+            padding: 100px 0 60px;
+            margin-top: 60px;
+        }
+
+        .project-detail-header a {
+            color: #73f8ff;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .project-detail-header a:hover {
+            text-decoration: underline;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 2rem;
+            color: #25936f;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .back-link:hover {
+            color: #73f8ff;
+        }
+
+        .project-hero {
+            background: linear-gradient(135deg, #25936f 0%, #1d6d52 100%);
+            color: var(--white);
+            padding: 3rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+            text-align: center;
+            font-size: 2.5rem;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            color: #25936f;
+            margin-top: 2.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 5px solid #ff8639;
+            padding-left: 1rem;
+        }
+
+        .section-content {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow);
+            line-height: 1.8;
+            color: #666;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 1rem 0;
+        }
+
+        .feature-item {
+            background: #fff1c7;
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+            border-left: 4px solid #8bd94f;
+        }
+
+        .feature-item strong {
+            display: block;
+            color: #25936f;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .feature-item p {
+            color: #666;
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+        .team-section {
+            background: linear-gradient(135deg, #fff1c7 0%, #ffffff 100%);
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 1rem 0;
+        }
+
+        .team-section strong {
+            color: #25936f;
+            font-size: 1.1rem;
+        }
+
+        .team-section p {
+            color: #666;
+            margin: 0.5rem 0;
+        }
+
+        .partnership-section {
+            background: linear-gradient(135deg, #73f8ff 0%, #fff1c7 100%);
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 1rem 0;
+            border-left: 5px solid #25936f;
+        }
+
+        .partnership-section strong {
+            color: #25936f;
+            font-size: 1.1rem;
+        }
+
+        .partnership-section p {
+            color: #333;
+            margin: 0.5rem 0;
+        }
+
+        .progress-timeline {
+            margin: 2rem 0;
+        }
+
+        .timeline-item {
+            display: grid;
+            grid-template-columns: 100px 1fr;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: #fff1c7;
+            border-radius: 8px;
+            border-left: 4px solid #ff8639;
+        }
+
+        .timeline-day {
+            font-weight: bold;
+            color: #25936f;
+            font-size: 1.1rem;
+        }
+
+        .timeline-description {
+            color: #666;
+        }
+
+        .cta-button-section {
+            background: linear-gradient(135deg, #25936f 0%, #1d6d52 100%);
+            color: var(--white);
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .cta-button-section h3 {
+            margin-top: 0;
+            color: #73f8ff;
+        }
+
+        .cta-btn {
+            background-color: #ff8639;
+            color: var(--white);
+            padding: 0.9rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 1rem;
+        }
+
+        .cta-btn:hover {
+            background-color: #ff9a52;
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            .project-hero {
+                font-size: 1.8rem;
+            }
+
+            .timeline-item {
+                grid-template-columns: 1fr;
+                gap: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">IMMERSE</div>
+            <ul class="nav-menu">
+                <li><a href="Index.html#home" class="nav-link">Home</a></li>
+                <li><a href="Index.html#about" class="nav-link">About</a></li>
+                <li><a href="mission.html" class="nav-link">Our Mission</a></li>
+                <li><a href="team.html" class="nav-link">Team</a></li>
+                <li><a href="projects.html" class="nav-link">Projects</a></li>
+                <li><a href="get-involved.html" class="nav-link">Get Involved</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Project Header -->
+    <section class="project-detail-header">
+        <div class="container">
+            <a href="projects.html">← Back to Projects</a>
+            <h1 style="margin-top: 1.5rem; color: #73f8ff;">Life with Parkinson's Disease</h1>
+            <p style="font-size: 1.3rem; margin-top: 1rem;">A Virtual Reality Simulation</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section style="padding: 60px 0;">
+        <div class="container">
+            <a href="projects.html" class="back-link">← Back to Projects</a>
+
+            <div class="project-hero">🥽</div>
+
+            <!-- Project Overview -->
+            <h2 class="section-title">Project Overview</h2>
+            <div class="section-content">
+                <p>
+                    Life with Parkinson's is an immersive Virtual Reality experience designed to foster empathy and understanding of the daily challenges faced by individuals living with Parkinson's Disease. Through a realistic three-day progression simulation featuring haptic feedback, comprehensive task systems, and detailed environments built in Unity, users gain firsthand insight into how this neurodegenerative condition affects everyday life.
+                </p>
+                <p>
+                    Our project aims to bridge the gap between medical education and empathetic patient care by allowing healthcare students, caregivers, and community members to experience Parkinson's from a patient's perspective.
+                </p>
+            </div>
+
+            <!-- Team Section -->
+            <h2 class="section-title">Project Team</h2>
+            <div class="team-section">
+                <strong>Lead Developer:</strong>
+                <p>Henry Lewis</p>
+                <strong style="display: block; margin-top: 1rem;">Collaborating Team:</strong>
+                <p>HAND Innovation Team</p>
+            </div>
+
+            <!-- Experience the Progression -->
+            <h2 class="section-title">Experience the Progression</h2>
+            <div class="progress-timeline">
+                <div class="timeline-item">
+                    <div class="timeline-day">Day One</div>
+                    <div class="timeline-description">
+                        <strong>Before Parkinson's</strong><br>
+                        Experience daily life as it was before diagnosis. Complete routine morning tasks, interact with family members, and establish a baseline for normal motor function. This day sets the context for understanding what changes lie ahead.
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-day">Day Two</div>
+                    <div class="timeline-description">
+                        <strong>Early Onset Symptoms</strong><br>
+                        Feel the first tremors and stiffness as early-stage Parkinson's begins to manifest. Tasks become more challenging as fine motor control diminishes. Experience the frustration and adaptation required as symptoms gradually affect daily activities.
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-day">Day Three</div>
+                    <div class="timeline-description">
+                        <strong>Advanced Challenges</strong><br>
+                        Navigate the complexities of advanced-stage Parkinson's. Experience significant tremors, rigidity, and difficulty with coordinated movements. Understand the profound impact on independence and the importance of support systems and medication.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Key Features -->
+            <h2 class="section-title">Key Features</h2>
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <strong>🎮 Task System</strong>
+                    <p>Complete daily activities and experience how PD affects routine tasks</p>
+                </div>
+                <div class="feature-item">
+                    <strong>📳 Haptic Feedback</strong>
+                    <p>Controller vibrations and visual effects simulate realistic tremors</p>
+                </div>
+                <div class="feature-item">
+                    <strong>💊 Medication System</strong>
+                    <p>Learn about managing Parkinson's through medication</p>
+                </div>
+                <div class="feature-item">
+                    <strong>🌍 Realistic Environments</strong>
+                    <p>Immersive scenes built in Unity with attention to detail</p>
+                </div>
+            </div>
+
+            <!-- Technical Details -->
+            <h2 class="section-title">Technical Implementation</h2>
+            <div class="section-content">
+                <p>
+                    <strong>Development Platform:</strong> Unity Engine<br>
+                    <strong>Programming Language:</strong> C#<br>
+                    <strong>Hardware:</strong> Oculus VR Headset<br>
+                    <strong>Simulation Duration:</strong> 3-day progression experience<br>
+                    <strong>Target Users:</strong> Healthcare students, medical professionals, caregivers, and community members
+                </p>
+            </div>
+
+            <!-- Partnership -->
+            <h2 class="section-title">Community Partnership</h2>
+            <div class="partnership-section">
+                <strong>In Partnership With:</strong>
+                <p>Parkinson's Community Los Angeles (PCLA)</p>
+                <p style="margin-top: 1rem; font-style: italic;">
+                    We collaborate closely with PCLA to ensure our simulation accurately represents the lived experiences of people with Parkinson's Disease. Their insights and guidance help us create an authentic and respectful educational tool.
+                </p>
+            </div>
+
+            <!-- Impact & Goals -->
+            <h2 class="section-title">Our Impact & Goals</h2>
+            <div class="section-content">
+                <p>
+                    <strong>Educational Impact:</strong> Provide healthcare students with empathetic context for patient care and understanding of neurological conditions.
+                </p>
+                <p>
+                    <strong>Community Awareness:</strong> Increase public understanding and empathy toward individuals living with Parkinson's Disease.
+                </p>
+                <p>
+                    <strong>Research Accessibility:</strong> Make advanced medical research and simulations accessible to students at all education levels, particularly in underrepresented communities across Los Angeles.
+                </p>
+                <p>
+                    <strong>Future Vision:</strong> Expand the simulation to include additional neurological conditions and create a platform for other medical education experiences.
+                </p>
+            </div>
+
+            <!-- Get Involved -->
+            <div class="cta-button-section">
+                <h3>Want to Get Involved?</h3>
+                <p>We're always looking for passionate volunteers, developers, and medical professionals to contribute to this meaningful project.</p>
+                <a href="get-involved.html" class="cta-btn">Join IMMERSE</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>IMMERSE</h3>
+                    <p>UCLA Student-Led Medical Education & Research Club</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p>Email: immerse@ucla.edu</p>
+                    <p>Location: UCLA Campus, Los Angeles, CA</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <div class="social-links">
+                        <a href="#">Instagram</a> | 
+                        <a href="#">Facebook</a> | 
+                        <a href="#">LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 IMMERSE at UCLA. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="Script.js"></script>
+</body>
+</html>

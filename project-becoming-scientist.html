@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Becoming a Scientist - IMMERSE at UCLA</title>
+    <link rel="stylesheet" href="Style.css">
+    <style>
+        .project-detail-header {
+            background: linear-gradient(135deg, #25936f 0%, #1d6d52 100%);
+            color: var(--white);
+            padding: 100px 0 60px;
+            margin-top: 60px;
+        }
+
+        .project-detail-header a {
+            color: #73f8ff;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .project-detail-header a:hover {
+            text-decoration: underline;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 2rem;
+            color: #25936f;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .back-link:hover {
+            color: #73f8ff;
+        }
+
+        .project-hero {
+            background: linear-gradient(135deg, #25936f 0%, #1d6d52 100%);
+            color: var(--white);
+            padding: 3rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+            text-align: center;
+            font-size: 2.5rem;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            color: #25936f;
+            margin-top: 2.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 5px solid #ff8639;
+            padding-left: 1rem;
+        }
+
+        .section-content {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow);
+            line-height: 1.8;
+            color: #666;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 1rem 0;
+        }
+
+        .feature-item {
+            background: #fff1c7;
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+            border-left: 4px solid #8bd94f;
+        }
+
+        .feature-item strong {
+            display: block;
+            color: #25936f;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .feature-item p {
+            color: #666;
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+        .team-section {
+            background: linear-gradient(135deg, #fff1c7 0%, #ffffff 100%);
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 1rem 0;
+        }
+
+        .team-section strong {
+            color: #25936f;
+            font-size: 1.1rem;
+        }
+
+        .team-section p {
+            color: #666;
+            margin: 0.5rem 0;
+        }
+
+        .partnership-section {
+            background: linear-gradient(135deg, #73f8ff 0%, #fff1c7 100%);
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 1rem 0;
+            border-left: 5px solid #25936f;
+        }
+
+        .partnership-section strong {
+            color: #25936f;
+            font-size: 1.1rem;
+        }
+
+        .partnership-section p {
+            color: #333;
+            margin: 0.5rem 0;
+        }
+
+        .experiment-showcase {
+            margin: 2rem 0;
+        }
+
+        .experiment-card {
+            background: var(--white);
+            border-radius: 10px;
+            margin-bottom: 1.5rem;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+
+        .experiment-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .experiment-header {
+            background: linear-gradient(135deg, #25936f 0%, #1d6d52 100%);
+            color: var(--white);
+            padding: 1.5rem;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .experiment-content {
+            padding: 1.5rem;
+        }
+
+        .experiment-content p {
+            color: #666;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .timeline-section {
+            margin: 2rem 0;
+        }
+
+        .timeline-item {
+            display: grid;
+            grid-template-columns: 150px 1fr;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: #fff1c7;
+            border-radius: 8px;
+            border-left: 4px solid #ff8639;
+        }
+
+        .timeline-year {
+            font-weight: bold;
+            color: #25936f;
+            font-size: 1.1rem;
+        }
+
+        .timeline-description {
+            color: #666;
+        }
+
+        .cta-button-section {
+            background: linear-gradient(135deg, #25936f 0%, #1d6d52 100%);
+            color: var(--white);
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .cta-button-section h3 {
+            margin-top: 0;
+            color: #73f8ff;
+        }
+
+        .cta-btn {
+            background-color: #ff8639;
+            color: var(--white);
+            padding: 0.9rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 1rem;
+        }
+
+        .cta-btn:hover {
+            background-color: #ff9a52;
+            transform: translateY(-2px);
+        }
+
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .impact-item {
+            background: #fff1c7;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid #8bd94f;
+        }
+
+        .impact-item strong {
+            color: #25936f;
+            display: block;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .impact-item p {
+            color: #666;
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            .project-hero {
+                font-size: 1.8rem;
+            }
+
+            .timeline-item {
+                grid-template-columns: 1fr;
+                gap: 0.5rem;
+            }
+
+            .impact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">IMMERSE</div>
+            <ul class="nav-menu">
+                <li><a href="Index.html#home" class="nav-link">Home</a></li>
+                <li><a href="Index.html#about" class="nav-link">About</a></li>
+                <li><a href="mission.html" class="nav-link">Our Mission</a></li>
+                <li><a href="team.html" class="nav-link">Team</a></li>
+                <li><a href="projects.html" class="nav-link">Projects</a></li>
+                <li><a href="get-involved.html" class="nav-link">Get Involved</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Project Header -->
+    <section class="project-detail-header">
+        <div class="container">
+            <a href="projects.html">← Back to Projects</a>
+            <h1 style="margin-top: 1.5rem; color: #73f8ff;">Becoming a Scientist</h1>
+            <p style="font-size: 1.3rem; margin-top: 1rem;">VR Educational Simulation</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section style="padding: 60px 0;">
+        <div class="container">
+            <a href="projects.html" class="back-link">← Back to Projects</a>
+
+            <div class="project-hero">🧪</div>
+
+            <!-- Project Overview -->
+            <h2 class="section-title">Project Overview</h2>
+            <div class="section-content">
+                <p>
+                    Becoming a Scientist is an immersive Virtual Reality educational simulation designed to democratize access to scientific research and laboratory techniques. Our mission is to make research more accessible for students at all education levels, from elementary school to graduate studies, by creating interactive experiences that bring real laboratory experiments into virtual environments.
+                </p>
+                <p>
+                    Through partnerships with UCLA researchers and students, we showcase authentic laboratory techniques and experiments, making complex scientific concepts tangible and engaging. This project specifically targets underrepresented communities in Los Angeles, providing equitable access to STEM education and research experiences.
+                </p>
+            </div>
+
+            <!-- Team Section -->
+            <h2 class="section-title">Project Team</h2>
+            <div class="team-section">
+                <strong>Lead Developer:</strong>
+                <p>Henry Lewis</p>
+                <strong style="display: block; margin-top: 1rem;">Collaborating Researchers:</strong>
+                <p>UCLA Lab Members & Research Students</p>
+                <strong style="display: block; margin-top: 1rem;">Development Timeline:</strong>
+                <p>July 2021 - Present</p>
+            </div>
+
+            <!-- Featured Experiments -->
+            <h2 class="section-title">Featured Laboratory Experiments</h2>
+            <div class="experiment-showcase">
+                <div class="experiment-card">
+                    <div class="experiment-header">Molecular Biology Techniques</div>
+                    <div class="experiment-content">
+                        <p>Experience PCR amplification, gel electrophoresis, and DNA sequencing in a virtual lab setting. Learn about molecular cloning and genetic engineering techniques used in modern biomedical research.</p>
+                    </div>
+                </div>
+
+                <div class="experiment-card">
+                    <div class="experiment-header">Cell Culture & Microscopy</div>
+                    <div class="experiment-content">
+                        <p>Master aseptic techniques, cell passaging, and microscopy. Explore cell biology concepts through interactive virtual experiments that demonstrate real laboratory protocols.</p>
+                    </div>
+                </div>
+
+                <div class="experiment-card">
+                    <div class="experiment-header">Neuroscience Research Methods</div>
+                    <div class="experiment-content">
+                        <p>Learn about brain imaging techniques, electrophysiological recordings, and behavioral assays. Understand how neuroscience research contributes to our understanding of neurological disorders.</p>
+                    </div>
+                </div>
+
+                <div class="experiment-card">
+                    <div class="experiment-header">Data Analysis & Statistics</div>
+                    <div class="experiment-content">
+                        <p>Practice statistical analysis of experimental data, learn about experimental design, and understand the importance of rigorous scientific methodology in research.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Key Features -->
+            <h2 class="section-title">Key Features</h2>
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <strong>🎓 Multi-Level Education</strong>
+                    <p>Content adapted for all education levels from K-12 to graduate studies</p>
+                </div>
+                <div class="feature-item">
+                    <strong>🔬 Authentic Experiments</strong>
+                    <p>Real laboratory techniques from UCLA research labs</p>
+                </div>
+                <div class="feature-item">
+                    <strong>🤝 Interactive Learning</strong>
+                    <p>Hands-on virtual experiments with immediate feedback</p>
+                </div>
+                <div class="feature-item">
+                    <strong>🌟 Community Focus</strong>
+                    <p>Designed specifically for underrepresented Los Angeles communities</p>
+                </div>
+            </div>
+
+            <!-- Technical Implementation -->
+            <h2 class="section-title">Technical Implementation</h2>
+            <div class="section-content">
+                <p>
+                    <strong>Development Platform:</strong> Unity Engine<br>
+                    <strong>Programming Language:</strong> C#<br>
+                    <strong>Hardware:</strong> Oculus VR Headset<br>
+                    <strong>Target Audience:</strong> Students from elementary to graduate level<br>
+                    <strong>Content Focus:</strong> Biomedical research techniques and scientific methodology
+                </p>
+            </div>
+
+            <!-- Development Timeline -->
+            <h2 class="section-title">Development Timeline</h2>
+            <div class="timeline-section">
+                <div class="timeline-item">
+                    <div class="timeline-year">July 2021</div>
+                    <div class="timeline-description">
+                        <strong>Project Initiation</strong><br>
+                        Initial concept development and research into VR educational applications. Began partnerships with UCLA researchers to identify key laboratory techniques to showcase.
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2022</div>
+                    <div class="timeline-description">
+                        <strong>Core Development</strong><br>
+                        Built foundational VR environment and implemented first laboratory experiments. Focused on molecular biology and cell culture techniques.
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2023</div>
+                    <div class="timeline-description">
+                        <strong>Content Expansion</strong><br>
+                        Added neuroscience research methods and data analysis modules. Began community outreach programs in Los Angeles.
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2024-Present</div>
+                    <div class="timeline-description">
+                        <strong>Ongoing Development</strong><br>
+                        Continuous content updates, user feedback integration, and expansion to additional research techniques and educational modules.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Community Impact -->
+            <h2 class="section-title">Community Impact & Mission</h2>
+            <div class="partnership-section">
+                <strong>Target Communities:</strong>
+                <p>Underrepresented areas in Los Angeles</p>
+                <p style="margin-top: 1rem; font-style: italic;">
+                    Becoming a Scientist is specifically designed to address educational inequities in STEM fields. By bringing advanced laboratory techniques to virtual reality, we provide students from underrepresented communities with access to experiences typically only available in well-funded research institutions.
+                </p>
+            </div>
+
+            <!-- Educational Impact -->
+            <h2 class="section-title">Educational Impact</h2>
+            <div class="impact-grid">
+                <div class="impact-item">
+                    <strong>Democratizing Research</strong>
+                    <p>Making advanced scientific techniques accessible to students regardless of their school's resources or location.</p>
+                </div>
+                <div class="impact-item">
+                    <strong>Early STEM Engagement</strong>
+                    <p>Introducing younger students to research careers through engaging, interactive experiences.</p>
+                </div>
+                <div class="impact-item">
+                    <strong>Diverse Representation</strong>
+                    <p>Showcasing research from diverse UCLA scientists and students to inspire underrepresented groups.</p>
+                </div>
+                <div class="impact-item">
+                    <strong>Practical Skills</strong>
+                    <p>Teaching fundamental laboratory techniques that prepare students for real research opportunities.</p>
+                </div>
+            </div>
+
+            <!-- Future Vision -->
+            <h2 class="section-title">Future Vision</h2>
+            <div class="section-content">
+                <p>
+                    <strong>Expanded Content:</strong> Addition of more research disciplines including environmental science, physics, and engineering<br>
+                    <strong>Collaborative Learning:</strong> Multi-user experiences allowing students to work together in virtual labs<br>
+                    <strong>Assessment Integration:</strong> Built-in progress tracking and educational assessment tools<br>
+                    <strong>Global Reach:</strong> Multilingual support and cultural adaptation for broader accessibility<br>
+                    <strong>Real-world Connections:</strong> Integration with actual UCLA research projects and mentorship programs
+                </p>
+            </div>
+
+            <!-- Get Involved -->
+            <div class="cta-button-section">
+                <h3>Help Shape the Future of STEM Education</h3>
+                <p>Join us in creating accessible scientific experiences for students everywhere.</p>
+                <a href="Index.html#contact" class="cta-btn">Join IMMERSE</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>IMMERSE</h3>
+                    <p>UCLA Student-Led Medical Education & Research Club</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p>Email: immerse@ucla.edu</p>
+                    <p>Location: UCLA Campus, Los Angeles, CA</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <div class="social-links">
+                        <a href="#">Instagram</a> | 
+                        <a href="#">Facebook</a> | 
+                        <a href="#">LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 IMMERSE at UCLA. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="Script.js"></script>
+</body>
+</html>

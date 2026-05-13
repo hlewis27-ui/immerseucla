@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MotionSense - IMMERSE at UCLA</title>
+    <link rel="stylesheet" href="Style.css">
+    <style>
+        .project-detail-header {
+            background: linear-gradient(135deg, #25936f 0%, #1d6d52 100%);
+            color: var(--white);
+            padding: 100px 0 60px;
+            margin-top: 60px;
+        }
+
+        .project-detail-header a {
+            color: #73f8ff;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .project-detail-header a:hover {
+            text-decoration: underline;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 2rem;
+            color: #25936f;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .back-link:hover {
+            color: #73f8ff;
+        }
+
+        .project-hero {
+            background: linear-gradient(135deg, #25936f 0%, #1d6d52 100%);
+            color: var(--white);
+            padding: 3rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+            text-align: center;
+            font-size: 2.5rem;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            color: #25936f;
+            margin-top: 2.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 5px solid #ff8639;
+            padding-left: 1rem;
+        }
+
+        .section-content {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow);
+            line-height: 1.8;
+            color: #666;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 1rem 0;
+        }
+
+        .feature-item {
+            background: #fff1c7;
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+            border-left: 4px solid #8bd94f;
+        }
+
+        .feature-item strong {
+            display: block;
+            color: #25936f;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .feature-item p {
+            color: #666;
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+        .team-section {
+            background: linear-gradient(135deg, #fff1c7 0%, #ffffff 100%);
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 1rem 0;
+        }
+
+        .team-section strong {
+            color: #25936f;
+            font-size: 1.1rem;
+        }
+
+        .team-section p {
+            color: #666;
+            margin: 0.5rem 0;
+        }
+
+        .partnership-section {
+            background: linear-gradient(135deg, #73f8ff 0%, #fff1c7 100%);
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 1rem 0;
+            border-left: 5px solid #25936f;
+        }
+
+        .partnership-section strong {
+            color: #25936f;
+            font-size: 1.1rem;
+        }
+
+        .partnership-section p {
+            color: #333;
+            margin: 0.5rem 0;
+        }
+
+        .task-flow {
+            margin: 2rem 0;
+        }
+
+        .task-step {
+            display: grid;
+            grid-template-columns: 60px 1fr;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+            padding: 1.5rem;
+            background: #fff1c7;
+            border-radius: 8px;
+            border-left: 4px solid #ff8639;
+            align-items: start;
+        }
+
+        .step-number {
+            background: #25936f;
+            color: var(--white);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .step-content {
+            color: #333;
+        }
+
+        .step-content strong {
+            color: #25936f;
+            display: block;
+            margin-bottom: 0.3rem;
+        }
+
+        .cta-button-section {
+            background: linear-gradient(135deg, #25936f 0%, #1d6d52 100%);
+            color: var(--white);
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .cta-button-section h3 {
+            margin-top: 0;
+            color: #73f8ff;
+        }
+
+        .cta-btn {
+            background-color: #ff8639;
+            color: var(--white);
+            padding: 0.9rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 1rem;
+        }
+
+        .cta-btn:hover {
+            background-color: #ff9a52;
+            transform: translateY(-2px);
+        }
+
+        .specs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .spec-item {
+            background: #fff1c7;
+            padding: 1rem;
+            border-radius: 8px;
+            border-left: 4px solid #8bd94f;
+        }
+
+        .spec-item strong {
+            color: #25936f;
+            display: block;
+            margin-bottom: 0.3rem;
+        }
+
+        .spec-item p {
+            color: #666;
+            font-size: 0.85rem;
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            .project-hero {
+                font-size: 1.8rem;
+            }
+
+            .task-step {
+                grid-template-columns: 1fr;
+            }
+
+            .step-number {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">IMMERSE</div>
+            <ul class="nav-menu">
+                <li><a href="Index.html#home" class="nav-link">Home</a></li>
+                <li><a href="Index.html#about" class="nav-link">About</a></li>
+                <li><a href="mission.html" class="nav-link">Our Mission</a></li>
+                <li><a href="team.html" class="nav-link">Team</a></li>
+                <li><a href="projects.html" class="nav-link">Projects</a></li>
+                <li><a href="get-involved.html" class="nav-link">Get Involved</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Project Header -->
+    <section class="project-detail-header">
+        <div class="container">
+            <a href="projects.html">← Back to Projects</a>
+            <h1 style="margin-top: 1.5rem; color: #73f8ff;">MotionSense</h1>
+            <p style="font-size: 1.3rem; margin-top: 1rem;">Mobile Research Platform for Parkinson's Disease</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section style="padding: 60px 0;">
+        <div class="container">
+            <a href="projects.html" class="back-link">← Back to Projects</a>
+
+            <div class="project-hero">📱</div>
+
+            <!-- Project Overview -->
+            <h2 class="section-title">Project Overview</h2>
+            <div class="section-content">
+                <p>
+                    MotionSense is a student-led mobile research platform designed to translate the Random Dot Motion (RDM) paradigm into an accessible, at-home testing solution for individuals with Parkinson's disease. Our goal is to democratize access to validated perceptual research tasks, enabling researchers to collect high-quality data from participants in the comfort of their own homes.
+                </p>
+                <p>
+                    By combining rigorous scientific methodology with modern mobile technology, MotionSense bridges the gap between traditional laboratory research and the practical needs of Parkinson's disease research, particularly in underserved communities across Los Angeles.
+                </p>
+            </div>
+
+            <!-- Team Section -->
+            <h2 class="section-title">Project Team</h2>
+            <div class="team-section">
+                <strong>Lead Developer:</strong>
+                <p>Henry Lewis</p>
+                <strong style="display: block; margin-top: 1rem;">Collaborating Team:</strong>
+                <p>HAND Innovation Team</p>
+                <strong style="display: block; margin-top: 1rem;">Research Advisor:</strong>
+                <p>Dr. Zeiger</p>
+            </div>
+
+            <!-- The Task Experience -->
+            <h2 class="section-title">The Task Experience</h2>
+            <div class="task-flow">
+                <div class="task-step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <strong>View Motion Stimulus</strong>
+                        <p>Participants view a field of moving dots on their phone screen</p>
+                    </div>
+                </div>
+                <div class="task-step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <strong>Identify Coherent Motion</strong>
+                        <p>A subset of dots move coherently in one direction (left or right)</p>
+                    </div>
+                </div>
+                <div class="task-step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <strong>Provide Response</strong>
+                        <p>The participant determines and indicates the overall direction of motion</p>
+                    </div>
+                </div>
+                <div class="task-step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <strong>Data Collection</strong>
+                        <p>Responses are securely recorded and analyzed in real-time</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Platform Features -->
+            <h2 class="section-title">Platform Features</h2>
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <strong>🏠 Remote Assessment</strong>
+                    <p>Complete tasks from home using any mobile device</p>
+                </div>
+                <div class="feature-item">
+                    <strong>⚙️ Adjustable Parameters</strong>
+                    <p>Modify coherence, duration, and frequency for personalized testing</p>
+                </div>
+                <div class="feature-item">
+                    <strong>🔒 Secure Data</strong>
+                    <p>Encrypted backend for storing performance metrics</p>
+                </div>
+                <div class="feature-item">
+                    <strong>📊 Research Dashboard</strong>
+                    <p>Review participant performance trends and analytics</p>
+                </div>
+            </div>
+
+            <!-- Technical Specifications -->
+            <h2 class="section-title">Technical Specifications</h2>
+            <div class="specs-grid">
+                <div class="spec-item">
+                    <strong>Platform</strong>
+                    <p>iOS & Android Mobile Applications</p>
+                </div>
+                <div class="spec-item">
+                    <strong>Architecture</strong>
+                    <p>React Native with Node.js Backend</p>
+                </div>
+                <div class="spec-item">
+                    <strong>Database</strong>
+                    <p>Encrypted HIPAA-compliant storage</p>
+                </div>
+                <div class="spec-item">
+                    <strong>Accessibility</strong>
+                    <p>WCAG 2.1 AA compliant</p>
+                </div>
+            </div>
+
+            <!-- Scientific Basis -->
+            <h2 class="section-title">Scientific Foundation</h2>
+            <div class="section-content">
+                <p>
+                    <strong>Random Dot Motion (RDM) Paradigm:</strong> The RDM task is a validated measure of visual motion perception that has been extensively studied in neuroscience and psychology research. It assesses how the brain processes visual information and is sensitive to changes in perceptual thresholds.
+                </p>
+                <p>
+                    <strong>Parkinson's Disease Application:</strong> Research has shown that individuals with Parkinson's disease exhibit altered motion perception. MotionSense leverages this finding to create a non-invasive, objective measure of disease progression and treatment efficacy.
+                </p>
+                <p>
+                    <strong>Remote Administration:</strong> By bringing this validated task to mobile devices, we enable frequent, long-term monitoring of perceptual function in natural settings, providing richer longitudinal data than traditional laboratory visits.
+                </p>
+            </div>
+
+            <!-- Partnership & Research Network -->
+            <h2 class="section-title">Research Partnerships</h2>
+            <div class="partnership-section">
+                <strong>Collaborating Institutions:</strong>
+                <p>UCLA Parkinson's Specialists and the broader Parkinson's Research Community</p>
+                <p style="margin-top: 1rem; font-style: italic;">
+                    MotionSense benefits from guidance and clinical expertise from leading Parkinson's researchers at UCLA. This collaboration ensures our platform remains scientifically rigorous and clinically relevant.
+                </p>
+            </div>
+
+            <!-- Benefits & Impact -->
+            <h2 class="section-title">Research Benefits & Impact</h2>
+            <div class="section-content">
+                <p>
+                    <strong>For Participants:</strong> Access to cutting-edge research studies from home, contributing to science without travel burden
+                </p>
+                <p>
+                    <strong>For Researchers:</strong> Increased participant recruitment, longitudinal data collection, and reduced study administration costs
+                </p>
+                <p>
+                    <strong>For Science:</strong> Better understanding of Parkinson's disease progression and potential new biomarkers for treatment response
+                </p>
+                <p>
+                    <strong>For Communities:</strong> Equitable access to medical research, particularly for underserved populations in Los Angeles
+                </p>
+            </div>
+
+            <!-- Future Development -->
+            <h2 class="section-title">Future Development Roadmap</h2>
+            <div class="section-content">
+                <p>
+                    • Integration with wearable devices for comprehensive motor assessment<br>
+                    • Multi-language support for diverse research communities<br>
+                    • Expansion to additional neurological conditions<br>
+                    • Machine learning-based predictive modeling<br>
+                    • Telehealth integration with clinical providers<br>
+                    • Open-source release for broader scientific adoption
+                </p>
+            </div>
+
+            <!-- Get Involved -->
+            <div class="cta-button-section">
+                <h3>Interested in Contributing to MotionSense?</h3>
+                <p>We're seeking software developers, researchers, and individuals passionate about accessible medical technology.</p>
+                <a href="get-involved.html" class="cta-btn">Join IMMERSE</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>IMMERSE</h3>
+                    <p>UCLA Student-Led Medical Education & Research Club</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p>Email: immerse@ucla.edu</p>
+                    <p>Location: UCLA Campus, Los Angeles, CA</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <div class="social-links">
+                        <a href="#">Instagram</a> | 
+                        <a href="#">Facebook</a> | 
+                        <a href="#">LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 IMMERSE at UCLA. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="Script.js"></script>
+</body>
+</html>

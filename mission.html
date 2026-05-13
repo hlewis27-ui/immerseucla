@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Mission - IMMERSE at UCLA</title>
+    <link rel="stylesheet" href="Style.css">
+    <style>
+        .mission-header {
+            background: linear-gradient(135deg, #25936f 0%, #1d6d52 100%);
+            color: var(--white);
+            padding: 100px 0 60px;
+            margin-top: 60px;
+            text-align: center;
+        }
+
+        .mission-header h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            color: #73f8ff;
+        }
+
+        .mission-header p {
+            font-size: 1.2rem;
+            opacity: 0.95;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .mission-intro {
+            padding: 80px 0;
+            background-color: var(--light-bg);
+            text-align: center;
+        }
+
+        .mission-intro h2 {
+            font-size: 2.5rem;
+            color: #25936f;
+            margin-bottom: 2rem;
+        }
+
+        .mission-intro p {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        .pillars-section {
+            padding: 80px 0;
+        }
+
+        .pillars-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #25936f;
+            margin-bottom: 3rem;
+        }
+
+        .immerse-spelling {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-bottom: 4rem;
+            font-size: 4rem;
+            font-weight: bold;
+            color: #25936f;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .letter {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            min-height: 120px;
+        }
+
+        .letter-text {
+            font-size: 3rem;
+            color: #ff8639;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+        }
+
+        .letter-label {
+            font-size: 0.9rem;
+            color: #666;
+            font-weight: normal;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .letter.medical-center {
+            position: relative;
+        }
+
+        .letter.medical-center .letter-label {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 100%;
+            white-space: nowrap;
+            width: auto;
+            min-width: 120px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .pillar-card {
+            background: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .pillar-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .pillar-header {
+            background: linear-gradient(135deg, #25936f 0%, #1d6d52 100%);
+            padding: 2rem;
+            color: var(--white);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pillar-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100px;
+            height: 100px;
+            background: rgba(115, 248, 255, 0.1);
+            border-radius: 50%;
+            transform: translate(30%, -30%);
+        }
+
+        .pillar-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .pillar-title {
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            color: #73f8ff;
+        }
+
+        .pillar-subtitle {
+            font-size: 1rem;
+            opacity: 0.9;
+            margin-bottom: 0;
+        }
+
+        .pillar-content {
+            padding: 2rem;
+        }
+
+        .pillar-description {
+            color: #666;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .pillar-highlights {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .pillar-highlights li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: #666;
+        }
+
+        .pillar-highlights li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #8bd94f;
+            font-weight: bold;
+        }
+
+        .mission-impact {
+            background: linear-gradient(135deg, #fff1c7 0%, #ffffff 100%);
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .mission-impact h2 {
+            font-size: 2.5rem;
+            color: #25936f;
+            margin-bottom: 2rem;
+        }
+
+        .mission-impact p {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            line-height: 1.8;
+        }
+
+        .impact-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .stat-item {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #ff8639;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: #666;
+            font-size: 1rem;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, #25936f 0%, #1d6d52 100%);
+            color: var(--white);
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #73f8ff;
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-button {
+            background-color: #ff8639;
+            color: var(--white);
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            background-color: #ff9a52;
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            .mission-header h1 {
+                font-size: 2rem;
+            }
+
+            .immerse-spelling {
+                font-size: 2.5rem;
+                gap: 0.5rem;
+            }
+
+            .letter-text {
+                font-size: 2rem;
+            }
+
+            .pillars-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .impact-stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .mission-intro h2,
+            .pillars-title,
+            .mission-impact h2,
+            .cta-section h2 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .impact-stats {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">IMMERSE</div>
+            <ul class="nav-menu">
+                <li><a href="Index.html#home" class="nav-link">Home</a></li>
+                <li><a href="Index.html#about" class="nav-link">About</a></li>
+                <li><a href="mission.html" class="nav-link">Our Mission</a></li>
+                <li><a href="team.html" class="nav-link">Team</a></li>
+                <li><a href="projects.html" class="nav-link">Projects</a></li>
+                <li><a href="get-involved.html" class="nav-link">Get Involved</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Mission Header -->
+    <section class="mission-header">
+        <h1>Our Mission</h1>
+        <p>Discover the core pillars that drive IMMERSE's commitment to advancing medical education, research, and community impact at UCLA.</p>
+    </section>
+
+    <!-- Mission Introduction -->
+    <section class="mission-intro">
+        <div class="container">
+            <h2>IMMERSE: A Vision for the Future</h2>
+            <p>
+                At IMMERSE, we believe that the future of healthcare lies at the intersection of technology, education, and human connection.
+                Our mission is to create immersive experiences that transform how students learn, researchers innovate, and communities heal.
+                Through our core pillars, we spell out our commitment to excellence in medical education and research.
+            </p>
+        </div>
+    </section>
+
+    <!-- IMMERSE Spelling -->
+    <section style="padding: 60px 0; background-color: var(--light-bg);">
+        <div class="container">
+            <div class="immerse-spelling">
+                <div class="letter">
+                    <div class="letter-text">I</div>
+                    <div class="letter-label">Immersion</div>
+                </div>
+                <div class="letter medical-center">
+                    <div class="letter-text">M</div>
+                </div>
+                <div class="letter medical-center">
+                    <div class="letter-text">M</div>
+                    <div class="letter-label">Medical</div>
+                </div>
+                <div class="letter">
+                    <div class="letter-text">E</div>
+                    <div class="letter-label">Education</div>
+                </div>
+                <div class="letter">
+                    <div class="letter-text">R</div>
+                    <div class="letter-label">Research</div>
+                </div>
+                <div class="letter">
+                    <div class="letter-text">S</div>
+                    <div class="letter-label">Science</div>
+                </div>
+                <div class="letter">
+                    <div class="letter-text">E</div>
+                    <div class="letter-label">Empathy</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Pillars -->
+    <section class="pillars-section">
+        <div class="container">
+            <h2 class="pillars-title">Our Core Pillars</h2>
+
+            <div class="pillars-grid">
+                <!-- Immersion -->
+                <div class="pillar-card">
+                    <div class="pillar-header">
+                        <div class="pillar-icon">🌊</div>
+                        <div class="pillar-title">Immersion</div>
+                        <div class="pillar-subtitle">Creating Deep Learning Experiences</div>
+                    </div>
+                    <div class="pillar-content">
+                        <div class="pillar-description">
+                            We believe in immersive learning that goes beyond traditional methods. Through virtual reality and interactive technologies, we create environments where students can truly experience and understand complex medical concepts.
+                        </div>
+                        <ul class="pillar-highlights">
+                            <li>VR-based medical simulations</li>
+                            <li>Interactive learning modules</li>
+                            <li>Hands-on research experiences</li>
+                            <li>Technology-driven education</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Medical -->
+                <div class="pillar-card">
+                    <div class="pillar-header">
+                        <div class="pillar-icon">⚕️</div>
+                        <div class="pillar-title">Medical</div>
+                        <div class="pillar-subtitle">Advancing Healthcare Innovation</div>
+                    </div>
+                    <div class="pillar-content">
+                        <div class="pillar-description">
+                            Our work focuses on real medical challenges and healthcare solutions. We collaborate with UCLA's medical community to develop technologies and research that directly impact patient care and medical education.
+                        </div>
+                        <ul class="pillar-highlights">
+                            <li>Patient care technology</li>
+                            <li>Medical device innovation</li>
+                            <li>Healthcare accessibility</li>
+                            <li>Clinical research support</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Education -->
+                <div class="pillar-card">
+                    <div class="pillar-header">
+                        <div class="pillar-icon">📚</div>
+                        <div class="pillar-title">Education</div>
+                        <div class="pillar-subtitle">Transforming Medical Learning</div>
+                    </div>
+                    <div class="pillar-content">
+                        <div class="pillar-description">
+                            We revolutionize medical education by making complex concepts accessible and engaging. Our educational initiatives serve students from all backgrounds, fostering the next generation of healthcare leaders.
+                        </div>
+                        <ul class="pillar-highlights">
+                            <li>Inclusive STEM education</li>
+                            <li>Multilevel learning paths</li>
+                            <li>Community outreach programs</li>
+                            <li>Educational equity initiatives</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Research -->
+                <div class="pillar-card">
+                    <div class="pillar-header">
+                        <div class="pillar-icon">🔬</div>
+                        <div class="pillar-title">Research</div>
+                        <div class="pillar-subtitle">Driving Scientific Discovery</div>
+                    </div>
+                    <div class="pillar-content">
+                        <div class="pillar-description">
+                            We conduct cutting-edge research that pushes the boundaries of medical technology and education. Our projects contribute to the broader scientific community while providing valuable experience to student researchers.
+                        </div>
+                        <ul class="pillar-highlights">
+                            <li>Innovative research projects</li>
+                            <li>IRB-approved studies</li>
+                            <li>Publication opportunities</li>
+                            <li>Interdisciplinary collaboration</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Science -->
+                <div class="pillar-card">
+                    <div class="pillar-header">
+                        <div class="pillar-icon">🧪</div>
+                        <div class="pillar-title">Science</div>
+                        <div class="pillar-subtitle">Foundations of Discovery</div>
+                    </div>
+                    <div class="pillar-content">
+                        <div class="pillar-description">
+                            At our core is a commitment to rigorous scientific methodology and evidence-based approaches. We ensure that all our work is grounded in sound science and contributes to the advancement of knowledge.
+                        </div>
+                        <ul class="pillar-highlights">
+                            <li>Evidence-based methodologies</li>
+                            <li>Scientific rigor and validation</li>
+                            <li>Data-driven insights</li>
+                            <li>Peer-reviewed approaches</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Empathy -->
+                <div class="pillar-card">
+                    <div class="pillar-header">
+                        <div class="pillar-icon">❤️</div>
+                        <div class="pillar-title">Empathy</div>
+                        <div class="pillar-subtitle">Human-Centered Healthcare</div>
+                    </div>
+                    <div class="pillar-content">
+                        <div class="pillar-description">
+                            We recognize that healthcare is fundamentally about people. Our work emphasizes empathy, cultural competence, and understanding diverse patient needs to create more compassionate and effective healthcare solutions.
+                        </div>
+                        <ul class="pillar-highlights">
+                            <li>Patient-centered design</li>
+                            <li>Cultural competence</li>
+                            <li>Community engagement</li>
+                            <li>Ethical healthcare practices</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission Impact -->
+    <section class="mission-impact">
+        <div class="container">
+            <h2>Our Impact</h2>
+            <p>
+                Through our core pillars, IMMERSE is making a measurable difference in medical education, research, and community health.
+                Our work creates lasting change that extends beyond UCLA to impact healthcare worldwide.
+            </p>
+
+            <div class="impact-stats">
+                <div class="stat-item">
+                    <div class="stat-number">500+</div>
+                    <div class="stat-label">Students Impacted</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">3</div>
+                    <div class="stat-label">Active Research Projects</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">10+</div>
+                    <div class="stat-label">Faculty Collaborations</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">∞</div>
+                    <div class="stat-label">Potential for Impact</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Join Our Mission</h2>
+            <p>Be part of a movement that's transforming medical education and research. Together, we can create a more immersive, compassionate, and innovative healthcare future.</p>
+            <a href="get-involved.html" class="cta-button">Get Involved</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>IMMERSE</h3>
+                    <p>UCLA Student-Led Medical Education & Research Club</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p>Email: immerse@ucla.edu</p>
+                    <p>Location: UCLA Campus, Los Angeles, CA</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <div class="social-links">
+                        <a href="#">Instagram</a> |
+                        <a href="#">Facebook</a> |
+                        <a href="#">LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 IMMERSE at UCLA. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="Script.js"></script>
+</body>
+</html>

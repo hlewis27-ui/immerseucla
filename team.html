@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Team - IMMERSE at UCLA</title>
+    <link rel="stylesheet" href="Style.css">
+    <style>
+        /* Team Page Specific Styles */
+        .team-header {
+            background: linear-gradient(135deg, #25936f 0%, #1d6d52 100%);
+            color: var(--white);
+            padding: 100px 0 60px;
+            margin-top: 60px;
+            text-align: center;
+        }
+
+        .team-header h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            color: #73f8ff;
+        }
+
+        .team-header p {
+            font-size: 1.2rem;
+            opacity: 0.95;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .team-section {
+            padding: 80px 0;
+        }
+
+        .team-section h2 {
+            font-size: 2.2rem;
+            color: #25936f;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .board-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .board-member {
+            background: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .board-member:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .member-header {
+            background: linear-gradient(135deg, #25936f 0%, #1d6d52 100%);
+            padding: 2rem 1.5rem;
+            color: var(--white);
+            min-height: 150px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .member-initial {
+            width: 80px;
+            height: 80px;
+            background-color: #73f8ff;
+            border-radius: 50%;
+            margin: 0 auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #25936f;
+        }
+
+        .member-name {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .member-position {
+            font-size: 0.95rem;
+            color: #fff1c7;
+            font-weight: 500;
+            line-height: 1.4;
+        }
+
+        .member-body {
+            padding: 1.5rem;
+        }
+
+        .member-bio {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .member-social {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        .social-link {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            background-color: #fff1c7;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: #25936f;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background-color: #73f8ff;
+            transform: scale(1.1);
+        }
+
+        .mission-statement {
+            background-color: #fff1c7;
+            padding: 3rem;
+            margin: 4rem 0;
+            border-radius: 10px;
+            border-left: 5px solid #ff8639;
+        }
+
+        .mission-statement h3 {
+            color: #25936f;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .mission-statement p {
+            color: #333;
+            line-height: 1.8;
+            font-size: 1rem;
+        }
+
+        .position-info {
+            background-color: #f0f0f0;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+            text-align: left;
+        }
+
+        .position-info h4 {
+            color: #25936f;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .position-info p {
+            font-size: 0.85rem;
+            color: #555;
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            margin-top: 3rem;
+        }
+
+        .two-column-text h3 {
+            font-size: 1.8rem;
+            color: #25936f;
+            margin-bottom: 1rem;
+        }
+
+        .two-column-text p {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .team-header h1 {
+                font-size: 2rem;
+            }
+
+            .board-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .two-column {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .mission-statement {
+                padding: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">IMMERSE</div>
+            <ul class="nav-menu">
+                <li><a href="Index.html#home" class="nav-link">Home</a></li>
+                <li><a href="Index.html#about" class="nav-link">About</a></li>
+                <li><a href="mission.html" class="nav-link">Our Mission</a></li>
+                <li><a href="team.html" class="nav-link">Team</a></li>
+                <li><a href="projects.html" class="nav-link">Projects</a></li>
+                <li><a href="get-involved.html" class="nav-link">Get Involved</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Team Header -->
+    <section class="team-header">
+        <h1>Our Executive Board</h1>
+        <p>Meet the dedicated leaders guiding IMMERSE at UCLA toward excellence in medical education, research, and community impact.</p>
+    </section>
+
+    <!-- Board Members Section -->
+    <section class="team-section" style="background-color: var(--light-bg);">
+        <div class="container">
+            <h2>Executive Leadership</h2>
+            
+            <div class="board-grid">
+                <!-- President -->
+                <div class="board-member">
+                    <a href="board-member-president.html" style="text-decoration: none; color: inherit;">
+                        <div class="member-header">
+                            <div class="member-initial">P</div>
+                            <div class="member-name">[Name]</div>
+                            <div class="member-position">President</div>
+                        </div>
+                    </a>
+                    <div class="member-body">
+                        <p class="member-bio">Chief executive officer providing overall leadership and vision.</p>
+                        <div class="member-social">
+                            <a href="#" class="social-link" title="Email">✉</a>
+                            <a href="#" class="social-link" title="LinkedIn">in</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- VP Internal Affairs -->
+                <div class="board-member">
+                    <a href="board-member-vp-internal.html" style="text-decoration: none; color: inherit;">
+                        <div class="member-header">
+                            <div class="member-initial">V</div>
+                            <div class="member-name">[Name]</div>
+                            <div class="member-position">VP Internal Affairs</div>
+                        </div>
+                    </a>
+                    <div class="member-body">
+                        <p class="member-bio">Oversees internal operations and member engagement.</p>
+                        <div class="member-social">
+                            <a href="#" class="social-link" title="Email">✉</a>
+                            <a href="#" class="social-link" title="LinkedIn">in</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- VP External Affairs -->
+                <div class="board-member">
+                    <a href="board-member-vp-external.html" style="text-decoration: none; color: inherit;">
+                        <div class="member-header">
+                            <div class="member-initial">V</div>
+                            <div class="member-name">[Name]</div>
+                            <div class="member-position">VP External Affairs</div>
+                        </div>
+                    </a>
+                    <div class="member-body">
+                        <p class="member-bio">Manages external presence and community partnerships.</p>
+                        <div class="member-social">
+                            <a href="#" class="social-link" title="Email">✉</a>
+                            <a href="#" class="social-link" title="LinkedIn">in</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Treasurer -->
+                <div class="board-member">
+                    <a href="board-member-treasurer.html" style="text-decoration: none; color: inherit;">
+                        <div class="member-header">
+                            <div class="member-initial">T</div>
+                            <div class="member-name">[Name]</div>
+                            <div class="member-position">Treasurer</div>
+                        </div>
+                    </a>
+                    <div class="member-body">
+                        <p class="member-bio">Manages all financial affairs of the organization.</p>
+                        <div class="member-social">
+                            <a href="#" class="social-link" title="Email">✉</a>
+                            <a href="#" class="social-link" title="LinkedIn">in</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Director of Projects -->
+                <div class="board-member">
+                    <a href="board-member-director-projects.html" style="text-decoration: none; color: inherit;">
+                        <div class="member-header">
+                            <div class="member-initial">P</div>
+                            <div class="member-name">[Name]</div>
+                            <div class="member-position">Director of Projects</div>
+                        </div>
+                    </a>
+                    <div class="member-body">
+                        <p class="member-bio">Oversees planning and development of major initiatives.</p>
+                        <div class="member-social">
+                            <a href="#" class="social-link" title="Email">✉</a>
+                            <a href="#" class="social-link" title="LinkedIn">in</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Director of Fundraising & Sponsorships -->
+                <div class="board-member">
+                    <a href="board-member-director-fundraising.html" style="text-decoration: none; color: inherit;">
+                        <div class="member-header">
+                            <div class="member-initial">F</div>
+                            <div class="member-name">[Name]</div>
+                            <div class="member-position">Director of Fundraising & Sponsorships</div>
+                        </div>
+                    </a>
+                    <div class="member-body">
+                        <p class="member-bio">Leads fundraising and sponsorship development efforts.</p>
+                        <div class="member-social">
+                            <a href="#" class="social-link" title="Email">✉</a>
+                            <a href="#" class="social-link" title="LinkedIn">in</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Board Information Section -->
+    <section class="team-section" style="background-color: var(--white);">
+        <div class="container">
+            <div class="mission-statement">
+                <h3>Board Requirements & Term</h3>
+                <p>
+                    All officers must be active members of IMMERSE and current UCLA undergraduate or graduate students. 
+                    Officers serve for one academic year or until their successors are selected. Officers must maintain 
+                    their status as UCLA students to remain in office.
+                </p>
+            </div>
+
+            <div class="two-column">
+                <div>
+                    <h3>Leadership Structure</h3>
+                    <p>
+                        The Executive Board is structured to ensure comprehensive oversight of all organizational functions 
+                        and initiatives. With dedicated leadership in both internal operations and external engagement, IMMERSE 
+                        maintains a balanced approach to achieving its mission.
+                    </p>
+                    <p>
+                        Each board member brings unique perspectives and expertise, working collaboratively to advance medical 
+                        education, research, and community service across UCLA and Los Angeles.
+                    </p>
+                </div>
+                <div style="background-color: #fff1c7; padding: 2rem; border-radius: 10px;">
+                    <h3 style="margin-top: 0;">Our Board Members Are:</h3>
+                    <ul style="color: #666; line-height: 2; margin-left: 1.5rem;">
+                        <li>✓ Passionate about medical education</li>
+                        <li>✓ Committed to research and science</li>
+                        <li>✓ Dedicated to community service</li>
+                        <li>✓ Active UCLA students</li>
+                        <li>✓ Collaborative leaders</li>
+                        <li>✓ Driven by empathy</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>IMMERSE</h3>
+                    <p>UCLA Student-Led Medical Education & Research Club</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p>Email: immerse@ucla.edu</p>
+                    <p>Location: UCLA Campus, Los Angeles, CA</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <div class="social-links">
+                        <a href="#">Instagram</a> | 
+                        <a href="#">Facebook</a> | 
+                        <a href="#">LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 IMMERSE at UCLA. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="Script.js"></script>
+</body>
+</html>

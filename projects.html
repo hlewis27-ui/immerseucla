@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Projects - IMMERSE at UCLA</title>
+    <link rel="stylesheet" href="Style.css">
+    <style>
+        .projects-header {
+            background: linear-gradient(135deg, #25936f 0%, #1d6d52 100%);
+            color: var(--white);
+            padding: 100px 0 60px;
+            margin-top: 60px;
+            text-align: center;
+        }
+
+        .projects-header h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            color: #73f8ff;
+        }
+
+        .projects-header p {
+            font-size: 1.2rem;
+            opacity: 0.95;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .projects-section {
+            padding: 80px 0;
+        }
+
+        .projects-section h2 {
+            font-size: 2.2rem;
+            color: #25936f;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .project-card {
+            background: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .project-header {
+            background: linear-gradient(135deg, #25936f 0%, #1d6d52 100%);
+            padding: 2rem;
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100px;
+            height: 100px;
+            background: rgba(115, 248, 255, 0.1);
+            border-radius: 50%;
+            transform: translate(30%, -30%);
+        }
+
+        .project-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .project-title {
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            color: #73f8ff;
+        }
+
+        .project-status {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            color: #fff1c7;
+        }
+
+        .project-body {
+            padding: 2rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-description {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .project-team {
+            background-color: #fff1c7;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            font-size: 0.85rem;
+        }
+
+        .project-team strong {
+            color: #25936f;
+            display: block;
+            margin-bottom: 0.3rem;
+        }
+
+        .project-team p {
+            margin: 0;
+            color: #333;
+        }
+
+        .project-features {
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .feature-list li {
+            padding: 0.4rem 0;
+            color: #666;
+            font-size: 0.85rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .feature-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #8bd94f;
+            font-weight: bold;
+        }
+
+        .project-partnerships {
+            background-color: #fff1c7;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            font-size: 0.85rem;
+        }
+
+        .project-partnerships strong {
+            color: #25936f;
+            display: block;
+            margin-bottom: 0.3rem;
+        }
+
+        .project-partnerships p {
+            margin: 0;
+            color: #333;
+        }
+
+        .project-link {
+            background-color: #ff8639;
+            color: var(--white);
+            text-decoration: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            text-align: center;
+            transition: all 0.3s ease;
+            display: inline-block;
+            align-self: flex-start;
+        }
+
+        .project-link:hover {
+            background-color: #ff9a52;
+            transform: translateX(5px);
+        }
+
+        .full-width-project {
+            background: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            margin-bottom: 2rem;
+        }
+
+        .full-width-project-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            padding: 3rem;
+        }
+
+        .full-width-project-left {
+            background: linear-gradient(135deg, #25936f 0%, #1d6d52 100%);
+            padding: 2.5rem;
+            border-radius: 10px;
+            color: var(--white);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .full-width-project-left h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #73f8ff;
+        }
+
+        .full-width-project-left p {
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .full-width-project-right h3 {
+            font-size: 1.5rem;
+            color: #25936f;
+            margin-bottom: 1rem;
+        }
+
+        .full-width-project-right p {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .projects-header h1 {
+                font-size: 2rem;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .full-width-project-content {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+                padding: 1.5rem;
+            }
+
+            .full-width-project-left {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">IMMERSE</div>
+            <ul class="nav-menu">
+                <li><a href="Index.html#home" class="nav-link">Home</a></li>
+                <li><a href="Index.html#about" class="nav-link">About</a></li>
+                <li><a href="mission.html" class="nav-link">Our Mission</a></li>
+                <li><a href="team.html" class="nav-link">Team</a></li>
+                <li><a href="projects.html" class="nav-link">Projects</a></li>
+                <li><a href="get-involved.html" class="nav-link">Get Involved</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Projects Header -->
+    <section class="projects-header">
+        <h1>Our Projects</h1>
+        <p>Innovative initiatives at the intersection of medical education, research, and technology</p>
+    </section>
+
+    <!-- Featured Projects Section -->
+    <section class="projects-section" style="background-color: var(--light-bg);">
+        <div class="container">
+            <h2>Featured Projects</h2>
+            
+            <div class="projects-grid">
+                <!-- Project 1: Life with Parkinson's -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-icon">🥽</div>
+                        <div class="project-title">Life with Parkinson's</div>
+                        <div class="project-status">A Virtual Reality Simulation</div>
+                    </div>
+                    <div class="project-body">
+                        <p class="project-description">
+                            An immersive VR experience that allows users to understand the daily challenges faced by those living with Parkinson's Disease through a three-day progression simulation.
+                        </p>
+                        
+                        <div class="project-team">
+                            <strong>Team Lead:</strong>
+                            <p>Henry Lewis & HAND Innovation Team</p>
+                        </div>
+
+                        <div class="project-features">
+                            <strong style="color: #25936f; display: block; margin-bottom: 0.5rem;">Key Features</strong>
+                            <ul class="feature-list">
+                                <li>Three-day progression simulation</li>
+                                <li>Haptic feedback & tremor effects</li>
+                                <li>Daily task systems</li>
+                                <li>Medication management system</li>
+                            </ul>
+                        </div>
+
+                        <div class="project-partnerships">
+                            <strong>Partnership</strong>
+                            <p>Parkinson's Community Los Angeles (PCLA)</p>
+                        </div>
+
+                        <a href="project-parkinsons-vr.html" class="project-link">Learn More</a>
+                    </div>
+                </div>
+
+                <!-- Project 2: MotionSense -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-icon">📱</div>
+                        <div class="project-title">MotionSense</div>
+                        <div class="project-status">Mobile Research Platform</div>
+                    </div>
+                    <div class="project-body">
+                        <p class="project-description">
+                            A student-led mobile research platform that translates the Random Dot Motion paradigm into an accessible, at-home testing solution for Parkinson's disease research.
+                        </p>
+                        
+                        <div class="project-team">
+                            <strong>Team Lead:</strong>
+                            <p>Henry Lewis & HAND Innovation Team</p>
+                        </div>
+
+                        <div class="project-features">
+                            <strong style="color: #25936f; display: block; margin-bottom: 0.5rem;">Key Features</strong>
+                            <ul class="feature-list">
+                                <li>Remote at-home assessment</li>
+                                <li>Adjustable task parameters</li>
+                                <li>Encrypted secure data storage</li>
+                                <li>Research dashboard & analytics</li>
+                            </ul>
+                        </div>
+
+                        <div class="project-partnerships">
+                            <strong>Partnership</strong>
+                            <p>UCLA Parkinson's Specialists & Research Community</p>
+                        </div>
+
+                        <a href="project-motionsense.html" class="project-link">Learn More</a>
+                    </div>
+                </div>
+
+                <!-- Project 3: Becoming a Scientist -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-icon">🧪</div>
+                        <div class="project-title">Becoming a Scientist</div>
+                        <div class="project-status">VR Educational Simulation</div>
+                    </div>
+                    <div class="project-body">
+                        <p class="project-description">
+                            An immersive VR experience designed to make research more accessible for students at all education levels, featuring real lab experiments and techniques from UCLA researchers.
+                        </p>
+                        
+                        <div class="project-team">
+                            <strong>Lead Developer:</strong>
+                            <p>Henry Lewis</p>
+                        </div>
+
+                        <div class="project-features">
+                            <strong style="color: #25936f; display: block; margin-bottom: 0.5rem;">Key Features</strong>
+                            <ul class="feature-list">
+                                <li>Interactive lab experiments</li>
+                                <li>Real research techniques</li>
+                                <li>Multi-level educational content</li>
+                                <li>Community outreach focus</li>
+                            </ul>
+                        </div>
+
+                        <div class="project-partnerships">
+                            <strong>Target Community</strong>
+                            <p>Underrepresented areas in Los Angeles</p>
+                        </div>
+
+                        <a href="project-becoming-scientist.html" class="project-link">Learn More</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Additional Project Highlight -->
+            <div class="full-width-project" style="margin-top: 3rem;">
+                <div class="full-width-project-content">
+                    <div class="full-width-project-left">
+                        <div class="project-icon" style="font-size: 3rem;">🧪</div>
+                        <h3>Research Innovation</h3>
+                        <p>Making research accessible to students at all education levels through immersive simulations and modern technology.</p>
+                    </div>
+                    <div class="full-width-project-right">
+                        <h3>Our Research Philosophy</h3>
+                        <p>
+                            We believe that groundbreaking research should be accessible to everyone. Our projects leverage cutting-edge technology like Virtual Reality and mobile platforms to democratize access to scientific research and medical simulations.
+                        </p>
+                        <p>
+                            By collaborating with community partners and medical professionals, we create meaningful experiences that bridge the gap between academic research and real-world impact—particularly in underrepresented communities across Los Angeles.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>IMMERSE</h3>
+                    <p>UCLA Student-Led Medical Education & Research Club</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p>Email: immerse@ucla.edu</p>
+                    <p>Location: UCLA Campus, Los Angeles, CA</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <div class="social-links">
+                        <a href="#">Instagram</a> | 
+                        <a href="#">Facebook</a> | 
+                        <a href="#">LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 IMMERSE at UCLA. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="Script.js"></script>
+</body>
+</html>
