@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Director of Fundraising, Sponsorships, and Travel - IMMERSE at UCLA</title>
+    <title>Director of Digital Media - IMMERSE at UCLA</title>
     <link rel="stylesheet" href="Style.css">
     <style>
         .member-detail-header {
@@ -12,149 +12,71 @@
             padding: 100px 0 60px;
             margin-top: 60px;
         }
-
         .member-detail-header a {
-            color: #73f8ff;
+            color: var(--white);
             text-decoration: none;
-            font-weight: 500;
+            opacity: 0.85;
         }
-
         .member-detail-header a:hover {
-            text-decoration: underline;
+            opacity: 1;
         }
-
         .member-detail-container {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 3rem;
+            gap: 2rem;
             align-items: start;
-            margin: 3rem 0;
         }
-
-        .member-photo-section {
-            background-color: #fff1c7;
-            border-radius: 15px;
-            padding: 2rem;
-            text-align: center;
-        }
-
         .member-photo-placeholder {
             width: 100%;
-            aspect-ratio: 1;
-            background: linear-gradient(135deg, #25936f 0%, #1d6d52 100%);
-            border-radius: 10px;
+            min-height: 360px;
+            background: #e5eaf0;
+            border-radius: 16px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 4rem;
-            color: #73f8ff;
+            font-size: 3rem;
+            color: #6f7d95;
+        }
+        .member-info-section h1 {
+            margin-bottom: 0.5rem;
+            font-size: 2.3rem;
+        }
+        .position-title {
+            font-size: 1.25rem;
+            color: #264653;
             margin-bottom: 1.5rem;
         }
-
-        .member-photo-placeholder.is-image {
-            background-size: cover;
-            background-position: center;
-        }
-
-        .photo-upload-info {
-            color: #666;
-            font-size: 0.9rem;
-            margin-top: 1rem;
-        }
-
-        .member-info-section h1 {
-            color: #25936f;
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .member-info-section .position-title {
-            color: #73f8ff;
-            font-size: 1.3rem;
-            font-weight: 600;
-            margin-bottom: 2rem;
-        }
-
-        .about-section {
-            background-color: var(--white);
-            padding: 2rem;
-            border-radius: 10px;
-            margin-bottom: 2rem;
-            border-left: 5px solid #ff8639;
-        }
-
         .about-section h3 {
-            color: #25936f;
-            margin-bottom: 1rem;
-            font-size: 1.3rem;
+            margin-top: 1.5rem;
         }
-
-        .about-section p {
-            color: #666;
-            line-height: 1.8;
-            white-space: pre-wrap;
-        }
-
         .member-socials {
-            display: flex;
-            gap: 1rem;
-            margin-top: 2rem;
+            margin-top: 1.5rem;
         }
-
         .social-btn {
-            flex: 1;
-            padding: 0.9rem;
-            border: 2px solid #25936f;
-            background-color: var(--white);
-            color: #25936f;
-            border-radius: 8px;
+            display: inline-block;
+            margin-right: 0.75rem;
+            margin-bottom: 0.75rem;
+            padding: 0.8rem 1rem;
+            background: #25936f;
+            color: #fff;
             text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            text-align: center;
+            border-radius: 8px;
         }
-
-        .social-btn:hover {
-            background-color: #25936f;
-            color: var(--white);
-        }
-
         .back-link {
             display: inline-block;
-            margin-bottom: 2rem;
-            color: #25936f;
+            margin-bottom: 1.5rem;
+            color: #1d6d52;
             text-decoration: none;
-            font-weight: 600;
         }
-
-        .back-link:hover {
-            color: #73f8ff;
-        }
-
         .edit-note {
-            background-color: #fff1c7;
-            padding: 1.5rem;
-            border-radius: 8px;
-            margin: 2rem 0;
-            color: #666;
-            font-size: 0.9rem;
-            border-left: 4px solid #ff8639;
-        }
-
-        @media (max-width: 768px) {
-            .member-detail-container {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
-            .member-info-section h1 {
-                font-size: 1.8rem;
-            }
+            background: #f2f7f1;
+            border-left: 4px solid #25936f;
+            padding: 1rem 1rem 1rem 1rem;
+            margin-bottom: 1.5rem;
         }
     </style>
 </head>
 <body>
-    <!-- Navigation Bar -->
     <nav class="navbar">
         <div class="nav-container">
             <div class="logo">IMMERSE</div>
@@ -169,7 +91,6 @@
         </div>
     </nav>
 
-    <!-- Member Header -->
     <section class="member-detail-header">
         <div class="container">
             <a href="team.html">← Back to Team</a>
@@ -177,22 +98,19 @@
         </div>
     </section>
 
-    <!-- Main Content -->
     <section style="padding: 60px 0;">
         <div class="container">
             <a href="team.html" class="back-link">← Back to Team</a>
 
             <div class="member-detail-container">
-                <!-- Photo Section -->
                 <div class="member-photo-section">
                     <div class="member-photo-placeholder">📷</div>
                     <p class="photo-upload-info">Replace this placeholder with a professional photo</p>
                 </div>
 
-                <!-- Info Section -->
                 <div class="member-info-section">
                     <h1>[Member Name]</h1>
-                    <div class="position-title">Director of Fundraising, Sponsorships, and Travel</div>
+                    <div class="position-title">Director of Digital Media</div>
                     
                     <div class="edit-note">
                         <strong>To customize this page:</strong> Replace placeholder text with member's actual name, bio, and add their photo. Update email and social media links below.
@@ -200,17 +118,17 @@
 
                     <div class="about-section">
                         <h3>General Role</h3>
-                        <p>The Director of Fundraising, Sponsorships, and Travel leads IMMERSE’s fundraising initiatives, sponsorship outreach, donation partnerships, internal funding requests, and travel coordination. This role also supports communication with organizations and community partners that IMMERSE fundraises for or donates to.</p>
+                        <p>The Director of Digital Media oversees IMMERSE’s digital storytelling and content creation, including podcasts, blogs, interviews, videos, newsletters, and other media projects. This role communicates the human, scientific, and educational impact of IMMERSE’s work.</p>
 
                         <h3>Main Responsibilities</h3>
                         <ul>
-                            <li>Lead IMMERSE fundraising initiatives, including campaigns, donation drives, charity partnerships, and fundraising events.</li>
-                            <li>Maintain close communication with organizations, nonprofits, charities, or community partners that IMMERSE fundraises for or donates to.</li>
-                            <li>Develop sponsorship proposals, fundraising materials, and donor outreach messages.</li>
-                            <li>Track fundraising progress, sponsorship conversations, donation commitments, and relationships with partner organizations.</li>
-                            <li>Coordinate travel logistics for conferences, retreats, presentations, and other club-related opportunities.</li>
-                            <li>Work with the President, External Vice President, and Director of Finances & Grants to align fundraising goals with club needs and budget limitations.</li>
-                            <li>Ensure fundraising and sponsorship efforts reflect IMMERSE’s mission and community values.</li>
+                            <li>Lead the creation of podcasts and blog posts while coordinating interviews that improve awareness of medical conditions and emerging technologies.</li>
+                            <li>Coordinate content highlighting IMMERSE projects, members, events, research topics, and community stories.</li>
+                            <li>Help organize interviews with physicians, researchers, healthcare workers, patients, caregivers, educators, and student innovators.</li>
+                            <li>Work with the External Vice President to identify meaningful people and organizations to feature.</li>
+                            <li>Manage content calendars, conference poster creation, and other digital media deliverables.</li>
+                            <li>Help preserve and share the stories behind IMMERSE’s projects and community impact.</li>
+                            <li>Support internal initiatives created by the media team and align their output with club goals.</li>
                         </ul>
                     </div>
 
@@ -223,7 +141,6 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">

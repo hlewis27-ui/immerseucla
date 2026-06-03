@@ -150,3 +150,45 @@ window.addEventListener('scroll', () => {
 });
 
 console.log('IMMERSE website loaded successfully!');
+
+// Hero title letter-splitting animation and floating dots
+function animateHeroTitle() {
+    const title = document.querySelector('.hero-title');
+    if (!title) return;
+    const text = title.textContent.trim();
+    // avoid double-wrapping
+    if (title.querySelector('.letter')) return;
+    title.textContent = '';
+    const fragment = document.createDocumentFragment();
+    text.split('').forEach((ch, i) => {
+        const span = document.createElement('span');
+        span.className = 'letter';
+        span.textContent = ch === ' ' ? '\u00A0' : ch;
+        span.style.animationDelay = (i * 0.05) + 's';
+        fragment.appendChild(span);
+    });
+    title.appendChild(fragment);
+}
+
+function createFloatingDots(count = 10) {
+    const hero = document.querySelector('.hero');
+    if (!hero) return;
+    // remove old dots
+    hero.querySelectorAll('.floating-dot').forEach(d => d.remove());
+    for (let i = 0; i < count; i++) {
+        const dot = document.createElement('div');
+        dot.className = 'floating-dot';
+        const size = Math.floor(Math.random() * 18) + 8;
+        dot.style.width = dot.style.height = size + 'px';
+        dot.style.left = (Math.random() * 100) + '%';
+        dot.style.top = (Math.random() * 80) + '%';
+        dot.style.opacity = (0.35 + Math.random() * 0.6).toString();
+        dot.style.setProperty('--dot-duration', (5 + Math.random() * 8) + 's');
+        hero.appendChild(dot);
+    }
+}
+
+window.addEventListener('load', () => {
+    animateHeroTitle();
+    createFloatingDots(10);
+});
